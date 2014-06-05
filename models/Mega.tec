@@ -1,0 +1,164 @@
+model Mega
+
+type Language
+	= "An artificial language used in software development"
+
+type Technology
+	= "A tool (in a very general sense) used in software development"
+
+type System
+	= "A deployed, implemented, or designed software system"
+
+type Artifact
+	= "A physical artifact as part of a software system"
+	
+type Fragment
+	= "A part of a software artifact"
+		
+type Meaning
+	= "The meaning of an artifact, a technology, or a part thereof"
+		
+type Concept
+	= "A concept from the broad domain of software development"
+		
+type Resource
+	= "A resource for any entity above in the sense of Linked Data"
+	
+type Request
+	= "The invocation of a certain service, tool, or script"
+	
+type Response
+	= "The response returned upon a request"
+		
+type Specification
+	= "eg. Java Language Specification"
+	
+type Protocol
+	= "eg. HTTP"
+	
+type Standart
+	= "eg. DVI"
+	
+type Organization
+	= "eg. IBM, Siemens"
+	
+type Person
+	= "eg. Joe Programmer"
+	
+type Role
+	= "eg. Developer, Tester, Manager"
+		
+type Action
+	
+type Function
+
+
+relation partOf
+	Artifact -> System
+		= "An artifact (a file) is part of a system."
+	Fragment -> Artifact
+		= "A fragment is part of an artifact."
+	Language -> Language
+		= "A language is part of another language."
+	Technology -> Technology
+		= "A technology is part of another technology."
+	Concept -> Concept
+		= "A concept is part of a concept."
+
+relation uses
+	System -> Language
+		= "A system (an artifact) uses a language."
+	Artifact -> Language
+		= "A system (an artifact) uses a language."
+	System -> Technology
+		= "A system (an artifact) uses a technology."
+	Artifact -> Technology
+		= "A system (an artifact) uses a technology."
+	
+	-- Languages and models thereof
+relation elementOf
+	Artifact -> Language
+		= "An artifact is an element of a language."
+	
+relation subsetOf
+	Language -> Language
+		= "A language is a subset of another language."
+	
+relation conformsTo
+	Artifact -> Artifact
+		= "An artifact conforms to an artifact."
+	
+relation correspondsTo
+	Artifact -> Artifact
+		= "An artifact corresponds to another artifact."
+	
+relation isA
+	Concept -> Concept
+		= "A concept is a (specialization) of another concept."
+	
+relation instanceOf
+	Concept -> Concept
+		= "A concept is an instance of another concept."
+	Language -> Concept
+		= "A language is an instance of a (classification) concept."
+	Technology -> Concept
+		= "A technology is an instance of a (classification) concept."
+		
+relation defines
+	Artifact -> Language
+		= "An artifact defines a language."
+	Artifact -> Meaning
+		= "An artifact (a fragment) defines a meaning."
+	Fragment -> Meaning
+		= "An artifact (a fragment) defines a meaning."
+	Technology -> Meaning
+		= "A technology defines a meaning."
+	
+relation supports
+	Technology -> Protocol
+		= "A technology supports a protocol."
+	
+relation implements
+	Technology -> Specification
+		= "A technology implements a specification."
+	Artifact -> Concept
+		= "An artifact (a fragment) implements a concept."
+	Fragment -> Concept
+		= "An artifact (a fragment) implements a concept."
+
+relation transformedInto
+	Artifact -> Artifact
+		= "An artifact is transformed into another artifact."
+	
+relation yields
+	Request -> Response
+		= "A request yields a response."
+	
+relation domainOf
+	Language -> Function
+		= "A language is the domain of a function."
+	
+relation coDomainOf
+	Language -> Function
+		= "A language is the co-domain of a function."
+		
+relation reads
+	Action -> Artifact
+		= "An action reads an artifact."
+	
+relation writes
+	Action -> Artifact
+		= "An action writes (as in „modifies“) an artifact."
+	
+	-- Persons
+relation developed
+	Person -> System
+		= "A person has developed a system."
+	
+relation knowsOf
+	Person -> Language
+		= "A person knows of a language."
+	Person -> Technology
+		= "A person knows of a technology."
+	Person -> Concept
+		= "A person knows of a concept."
