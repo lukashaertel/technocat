@@ -7,8 +7,10 @@ import eu.metatools.technocat.technoCat.RD
 import eu.metatools.technocat.technoCat.TechnoCatPackage
 import org.eclipse.xtext.validation.Check
 
+import static extension eu.metatools.technocat.reasoning.TechnoCatExpansions.*
 import static extension eu.metatools.technocat.reasoning.TechnoCatExtensions.*
 import static extension eu.metatools.technocat.reasoning.TechnoCatRelations.*
+import static extension eu.metatools.technocat.util.TechnoCatStrings.*
 
 /**
  * Custom validation rules. 
@@ -28,7 +30,20 @@ class TechnoCatValidator extends AbstractTechnoCatValidator {
 		guard(right != null)
 		guard(right.type != null)
 
-		if (applicableOverloads.empty)
-			error("No applicable relation", TechnoCatPackage.Literals.RD__RELATION, NO_APPLICABLE_RELATION)
+		if (applicableOverloads.empty) {
+
+			// Get entity type hierachy for the left type
+			val hleft = left.type.iexpand[effectiveBases].map[name]
+
+			// Get relation type hierachy
+			val hrelation = relation.iexpand[effectiveBases].map[name]
+
+			// Get entity type hierachy for the right type
+			val hright = right.type.iexpand[effectiveBases].map[name]
+
+			error(
+				'''No applicable relation for «hleft.representation» «hrelation.representation» «hright.representation»''',
+				TechnoCatPackage.Literals.RD__RELATION, NO_APPLICABLE_RELATION)
+		}
 	}
 }
