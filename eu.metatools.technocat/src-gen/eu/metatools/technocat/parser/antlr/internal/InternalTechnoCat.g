@@ -99,66 +99,104 @@ ruleTechnologyCatalog returns [EObject current=null]
 	    }
 
 )
-)(
+)((
 (
 		{ 
-	        newCompositeNode(grammarAccess.getTechnologyCatalogAccess().getModelElementsElementParserRuleCall_2_0()); 
+	        newCompositeNode(grammarAccess.getTechnologyCatalogAccess().getImportsImportParserRuleCall_2_0_0()); 
 	    }
-		lv_modelElements_2_0=ruleElement		{
+		lv_imports_2_0=ruleImport		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getTechnologyCatalogRule());
 	        }
        		add(
        			$current, 
-       			"modelElements",
-        		lv_modelElements_2_0, 
-        		"Element");
+       			"imports",
+        		lv_imports_2_0, 
+        		"Import");
 	        afterParserOrEnumRuleCall();
 	    }
 
 )
-)*)
-;
-
-
-
-
-
-// Entry rule entryRuleElement
-entryRuleElement returns [EObject current=null] 
-	:
-	{ newCompositeNode(grammarAccess.getElementRule()); }
-	 iv_ruleElement=ruleElement 
-	 { $current=$iv_ruleElement.current; } 
-	 EOF 
-;
-
-// Rule Element
-ruleElement returns [EObject current=null] 
-    @init { enterRule(); 
-    }
-    @after { leaveRule(); }:
-(
-    { 
-        newCompositeNode(grammarAccess.getElementAccess().getImportParserRuleCall_0()); 
-    }
-    this_Import_0=ruleImport
-    { 
-        $current = $this_Import_0.current; 
-        afterParserOrEnumRuleCall();
-    }
-
-    |
-    { 
-        newCompositeNode(grammarAccess.getElementAccess().getModelElementParserRuleCall_1()); 
-    }
-    this_ModelElement_1=ruleModelElement
-    { 
-        $current = $this_ModelElement_1.current; 
-        afterParserOrEnumRuleCall();
-    }
 )
+    |(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getTechnologyCatalogAccess().getEntityTypesETDParserRuleCall_2_1_0()); 
+	    }
+		lv_entityTypes_3_0=ruleETD		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getTechnologyCatalogRule());
+	        }
+       		add(
+       			$current, 
+       			"entityTypes",
+        		lv_entityTypes_3_0, 
+        		"ETD");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)
+    |(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getTechnologyCatalogAccess().getRelationTypesRTDParserRuleCall_2_2_0()); 
+	    }
+		lv_relationTypes_4_0=ruleRTD		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getTechnologyCatalogRule());
+	        }
+       		add(
+       			$current, 
+       			"relationTypes",
+        		lv_relationTypes_4_0, 
+        		"RTD");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)
+    |(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getTechnologyCatalogAccess().getEntitiesEDParserRuleCall_2_3_0()); 
+	    }
+		lv_entities_5_0=ruleED		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getTechnologyCatalogRule());
+	        }
+       		add(
+       			$current, 
+       			"entities",
+        		lv_entities_5_0, 
+        		"ED");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)
+    |(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getTechnologyCatalogAccess().getRelationsRDParserRuleCall_2_4_0()); 
+	    }
+		lv_relations_6_0=ruleRD		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getTechnologyCatalogRule());
+	        }
+       		add(
+       			$current, 
+       			"relations",
+        		lv_relations_6_0, 
+        		"RD");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+))*)
 ;
+
+
 
 
 

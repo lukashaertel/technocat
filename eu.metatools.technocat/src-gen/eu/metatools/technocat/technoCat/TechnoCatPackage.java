@@ -76,13 +76,49 @@ public interface TechnoCatPackage extends EPackage
   int TECHNOLOGY_CATALOG__NAME = 0;
 
   /**
-   * The feature id for the '<em><b>Model Elements</b></em>' containment reference list.
+   * The feature id for the '<em><b>Imports</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int TECHNOLOGY_CATALOG__MODEL_ELEMENTS = 1;
+  int TECHNOLOGY_CATALOG__IMPORTS = 1;
+
+  /**
+   * The feature id for the '<em><b>Entity Types</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TECHNOLOGY_CATALOG__ENTITY_TYPES = 2;
+
+  /**
+   * The feature id for the '<em><b>Relation Types</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TECHNOLOGY_CATALOG__RELATION_TYPES = 3;
+
+  /**
+   * The feature id for the '<em><b>Entities</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TECHNOLOGY_CATALOG__ENTITIES = 4;
+
+  /**
+   * The feature id for the '<em><b>Relations</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TECHNOLOGY_CATALOG__RELATIONS = 5;
 
   /**
    * The number of structural features of the '<em>Technology Catalog</em>' class.
@@ -91,7 +127,7 @@ public interface TechnoCatPackage extends EPackage
    * @generated
    * @ordered
    */
-  int TECHNOLOGY_CATALOG_FEATURE_COUNT = 2;
+  int TECHNOLOGY_CATALOG_FEATURE_COUNT = 6;
 
   /**
    * The meta object id for the '{@link eu.metatools.technocat.technoCat.impl.ElementImpl <em>Element</em>}' class.
@@ -514,15 +550,59 @@ public interface TechnoCatPackage extends EPackage
   EAttribute getTechnologyCatalog_Name();
 
   /**
-   * Returns the meta object for the containment reference list '{@link eu.metatools.technocat.technoCat.TechnologyCatalog#getModelElements <em>Model Elements</em>}'.
+   * Returns the meta object for the containment reference list '{@link eu.metatools.technocat.technoCat.TechnologyCatalog#getImports <em>Imports</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Model Elements</em>'.
-   * @see eu.metatools.technocat.technoCat.TechnologyCatalog#getModelElements()
+   * @return the meta object for the containment reference list '<em>Imports</em>'.
+   * @see eu.metatools.technocat.technoCat.TechnologyCatalog#getImports()
    * @see #getTechnologyCatalog()
    * @generated
    */
-  EReference getTechnologyCatalog_ModelElements();
+  EReference getTechnologyCatalog_Imports();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link eu.metatools.technocat.technoCat.TechnologyCatalog#getEntityTypes <em>Entity Types</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Entity Types</em>'.
+   * @see eu.metatools.technocat.technoCat.TechnologyCatalog#getEntityTypes()
+   * @see #getTechnologyCatalog()
+   * @generated
+   */
+  EReference getTechnologyCatalog_EntityTypes();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link eu.metatools.technocat.technoCat.TechnologyCatalog#getRelationTypes <em>Relation Types</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Relation Types</em>'.
+   * @see eu.metatools.technocat.technoCat.TechnologyCatalog#getRelationTypes()
+   * @see #getTechnologyCatalog()
+   * @generated
+   */
+  EReference getTechnologyCatalog_RelationTypes();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link eu.metatools.technocat.technoCat.TechnologyCatalog#getEntities <em>Entities</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Entities</em>'.
+   * @see eu.metatools.technocat.technoCat.TechnologyCatalog#getEntities()
+   * @see #getTechnologyCatalog()
+   * @generated
+   */
+  EReference getTechnologyCatalog_Entities();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link eu.metatools.technocat.technoCat.TechnologyCatalog#getRelations <em>Relations</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Relations</em>'.
+   * @see eu.metatools.technocat.technoCat.TechnologyCatalog#getRelations()
+   * @see #getTechnologyCatalog()
+   * @generated
+   */
+  EReference getTechnologyCatalog_Relations();
 
   /**
    * Returns the meta object for class '{@link eu.metatools.technocat.technoCat.Element <em>Element</em>}'.
@@ -863,12 +943,44 @@ public interface TechnoCatPackage extends EPackage
     EAttribute TECHNOLOGY_CATALOG__NAME = eINSTANCE.getTechnologyCatalog_Name();
 
     /**
-     * The meta object literal for the '<em><b>Model Elements</b></em>' containment reference list feature.
+     * The meta object literal for the '<em><b>Imports</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference TECHNOLOGY_CATALOG__MODEL_ELEMENTS = eINSTANCE.getTechnologyCatalog_ModelElements();
+    EReference TECHNOLOGY_CATALOG__IMPORTS = eINSTANCE.getTechnologyCatalog_Imports();
+
+    /**
+     * The meta object literal for the '<em><b>Entity Types</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference TECHNOLOGY_CATALOG__ENTITY_TYPES = eINSTANCE.getTechnologyCatalog_EntityTypes();
+
+    /**
+     * The meta object literal for the '<em><b>Relation Types</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference TECHNOLOGY_CATALOG__RELATION_TYPES = eINSTANCE.getTechnologyCatalog_RelationTypes();
+
+    /**
+     * The meta object literal for the '<em><b>Entities</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference TECHNOLOGY_CATALOG__ENTITIES = eINSTANCE.getTechnologyCatalog_Entities();
+
+    /**
+     * The meta object literal for the '<em><b>Relations</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference TECHNOLOGY_CATALOG__RELATIONS = eINSTANCE.getTechnologyCatalog_Relations();
 
     /**
      * The meta object literal for the '{@link eu.metatools.technocat.technoCat.impl.ElementImpl <em>Element</em>}' class.

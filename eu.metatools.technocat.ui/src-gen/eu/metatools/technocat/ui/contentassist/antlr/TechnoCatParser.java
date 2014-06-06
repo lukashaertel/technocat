@@ -37,6 +37,7 @@ public class TechnoCatParser extends AbstractContentAssistParser {
 			nameMappings = new HashMap<AbstractElement, String>() {
 				private static final long serialVersionUID = 1L;
 				{
+					put(grammarAccess.getTechnologyCatalogAccess().getAlternatives_2(), "rule__TechnologyCatalog__Alternatives_2");
 					put(grammarAccess.getElementAccess().getAlternatives(), "rule__Element__Alternatives");
 					put(grammarAccess.getModelElementAccess().getAlternatives(), "rule__ModelElement__Alternatives");
 					put(grammarAccess.getDefinitionElementAccess().getAlternatives(), "rule__DefinitionElement__Alternatives");
@@ -64,7 +65,11 @@ public class TechnoCatParser extends AbstractContentAssistParser {
 					put(grammarAccess.getRDAccess().getGroup(), "rule__RD__Group__0");
 					put(grammarAccess.getRDAccess().getGroup_3(), "rule__RD__Group_3__0");
 					put(grammarAccess.getTechnologyCatalogAccess().getNameAssignment_1(), "rule__TechnologyCatalog__NameAssignment_1");
-					put(grammarAccess.getTechnologyCatalogAccess().getModelElementsAssignment_2(), "rule__TechnologyCatalog__ModelElementsAssignment_2");
+					put(grammarAccess.getTechnologyCatalogAccess().getImportsAssignment_2_0(), "rule__TechnologyCatalog__ImportsAssignment_2_0");
+					put(grammarAccess.getTechnologyCatalogAccess().getEntityTypesAssignment_2_1(), "rule__TechnologyCatalog__EntityTypesAssignment_2_1");
+					put(grammarAccess.getTechnologyCatalogAccess().getRelationTypesAssignment_2_2(), "rule__TechnologyCatalog__RelationTypesAssignment_2_2");
+					put(grammarAccess.getTechnologyCatalogAccess().getEntitiesAssignment_2_3(), "rule__TechnologyCatalog__EntitiesAssignment_2_3");
+					put(grammarAccess.getTechnologyCatalogAccess().getRelationsAssignment_2_4(), "rule__TechnologyCatalog__RelationsAssignment_2_4");
 					put(grammarAccess.getImportAccess().getRefAssignment_1(), "rule__Import__RefAssignment_1");
 					put(grammarAccess.getETDAccess().getNameAssignment_1(), "rule__ETD__NameAssignment_1");
 					put(grammarAccess.getETDAccess().getBasesAssignment_2_1(), "rule__ETD__BasesAssignment_2_1");

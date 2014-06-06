@@ -200,9 +200,49 @@ public class TechnoCatPackageImpl extends EPackageImpl implements TechnoCatPacka
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getTechnologyCatalog_ModelElements()
+  public EReference getTechnologyCatalog_Imports()
   {
     return (EReference)technologyCatalogEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getTechnologyCatalog_EntityTypes()
+  {
+    return (EReference)technologyCatalogEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getTechnologyCatalog_RelationTypes()
+  {
+    return (EReference)technologyCatalogEClass.getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getTechnologyCatalog_Entities()
+  {
+    return (EReference)technologyCatalogEClass.getEStructuralFeatures().get(4);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getTechnologyCatalog_Relations()
+  {
+    return (EReference)technologyCatalogEClass.getEStructuralFeatures().get(5);
   }
 
   /**
@@ -517,7 +557,11 @@ public class TechnoCatPackageImpl extends EPackageImpl implements TechnoCatPacka
     // Create classes and their features
     technologyCatalogEClass = createEClass(TECHNOLOGY_CATALOG);
     createEAttribute(technologyCatalogEClass, TECHNOLOGY_CATALOG__NAME);
-    createEReference(technologyCatalogEClass, TECHNOLOGY_CATALOG__MODEL_ELEMENTS);
+    createEReference(technologyCatalogEClass, TECHNOLOGY_CATALOG__IMPORTS);
+    createEReference(technologyCatalogEClass, TECHNOLOGY_CATALOG__ENTITY_TYPES);
+    createEReference(technologyCatalogEClass, TECHNOLOGY_CATALOG__RELATION_TYPES);
+    createEReference(technologyCatalogEClass, TECHNOLOGY_CATALOG__ENTITIES);
+    createEReference(technologyCatalogEClass, TECHNOLOGY_CATALOG__RELATIONS);
 
     elementEClass = createEClass(ELEMENT);
 
@@ -600,7 +644,11 @@ public class TechnoCatPackageImpl extends EPackageImpl implements TechnoCatPacka
     // Initialize classes and features; add operations and parameters
     initEClass(technologyCatalogEClass, TechnologyCatalog.class, "TechnologyCatalog", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getTechnologyCatalog_Name(), ecorePackage.getEString(), "name", null, 0, 1, TechnologyCatalog.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getTechnologyCatalog_ModelElements(), this.getElement(), null, "modelElements", null, 0, -1, TechnologyCatalog.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getTechnologyCatalog_Imports(), this.getImport(), null, "imports", null, 0, -1, TechnologyCatalog.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getTechnologyCatalog_EntityTypes(), this.getETD(), null, "entityTypes", null, 0, -1, TechnologyCatalog.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getTechnologyCatalog_RelationTypes(), this.getRTD(), null, "relationTypes", null, 0, -1, TechnologyCatalog.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getTechnologyCatalog_Entities(), this.getED(), null, "entities", null, 0, -1, TechnologyCatalog.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getTechnologyCatalog_Relations(), this.getRD(), null, "relations", null, 0, -1, TechnologyCatalog.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(elementEClass, Element.class, "Element", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 

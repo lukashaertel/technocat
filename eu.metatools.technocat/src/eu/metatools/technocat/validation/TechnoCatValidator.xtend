@@ -10,7 +10,16 @@ import org.eclipse.xtext.validation.Check
 import static extension eu.metatools.technocat.reasoning.TechnoCatExpansions.*
 import static extension eu.metatools.technocat.reasoning.TechnoCatExtensions.*
 import static extension eu.metatools.technocat.reasoning.TechnoCatRelations.*
+import static extension eu.metatools.technocat.reasoning.TechnoCatScopes.*
 import static extension eu.metatools.technocat.util.TechnoCatStrings.*
+import static extension eu.metatools.technocat.util.TechnoCatEcore.*
+import eu.metatools.technocat.technoCat.ModelElement
+import eu.metatools.technocat.technoCat.DefinitionElement
+import eu.metatools.technocat.technoCat.ETD
+import eu.metatools.technocat.technoCat.ED
+import javax.naming.Name
+import eu.metatools.technocat.technoCat.RTD
+import eu.metatools.technocat.technoCat.EDItem
 
 /**
  * Custom validation rules. 
@@ -19,6 +28,7 @@ import static extension eu.metatools.technocat.util.TechnoCatStrings.*
  */
 class TechnoCatValidator extends AbstractTechnoCatValidator {
 	public static val NO_APPLICABLE_RELATION = "noApplicableRelation"
+	public static val NAME_ALREADY_USED = "nameAlreadyUsed"
 
 	@Check
 	def checkValidRelation(RD it) {
@@ -44,6 +54,27 @@ class TechnoCatValidator extends AbstractTechnoCatValidator {
 			error(
 				'''No applicable relation for «hleft.representation» «hrelation.representation» «hright.representation»''',
 				TechnoCatPackage.Literals.RD__RELATION, NO_APPLICABLE_RELATION)
+		}
+	}
+
+	@Check
+	def checkUniqueEntityTypes(ETD x) {
+		if (x.technologyCatalog.effectiveETDs.exists[y|x != y && x.name == y.name]) {
+			error('''Multiple defintions''', TechnoCatPackage.Literals.DEFINITION_ELEMENT__NAME, NAME_ALREADY_USED)
+		}
+	}
+
+	@Check
+	def checkUniqueRelationTypes(RTD x) {
+		if (x.technologyCatalog.effectiveRTDs.exists[y|x != y && x.name == y.name]) {
+			error('''Multiple defintions''', TechnoCatPackage.Literals.DEFINITION_ELEMENT__NAME, NAME_ALREADY_USED)
+		}
+	}
+
+	@Check
+	def checkUniqueRelationTypes(EDItem x) {
+		if (x.technologyCatalog.effectiveEDs.map[items].flatten.exists[y|x != y && x.name == y.name]) {
+			error('''Multiple defintions''', TechnoCatPackage.Literals.ED_ITEM__NAME, NAME_ALREADY_USED)
 		}
 	}
 }

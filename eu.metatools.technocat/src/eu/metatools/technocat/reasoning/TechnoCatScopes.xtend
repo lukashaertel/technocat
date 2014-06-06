@@ -3,7 +3,6 @@ package eu.metatools.technocat.reasoning
 import eu.metatools.technocat.technoCat.ED
 import eu.metatools.technocat.technoCat.EDItem
 import eu.metatools.technocat.technoCat.ETD
-import eu.metatools.technocat.technoCat.Import
 import eu.metatools.technocat.technoCat.RTD
 import eu.metatools.technocat.technoCat.RTDItem
 import eu.metatools.technocat.technoCat.TechnologyCatalog
@@ -12,15 +11,15 @@ import static extension eu.metatools.technocat.reasoning.TechnoCatExpansions.*
 
 class TechnoCatScopes {
 	def static effectiveCatalog(TechnologyCatalog it) {
-		iexpand[modelElements.filter(Import).map[ref]]
+		iexpand[imports.map[ref]]
 	}
 
 	def static Iterable<ETD> effectiveETDs(TechnologyCatalog it) {
-		effectiveCatalog.map[modelElements.filter(ETD)].flatten
+		effectiveCatalog.map[entityTypes].flatten
 	}
 
 	def static Iterable<RTD> effectiveRTDs(TechnologyCatalog it) {
-		effectiveCatalog.map[modelElements.filter(RTD)].flatten
+		effectiveCatalog.map[relationTypes].flatten
 	}
 
 	def static Iterable<RTDItem> effectiveRTDItems(TechnologyCatalog it) {
@@ -28,7 +27,7 @@ class TechnoCatScopes {
 	}
 
 	def static Iterable<ED> effectiveEDs(TechnologyCatalog it) {
-		effectiveCatalog.map[modelElements.filter(ED)].flatten
+		effectiveCatalog.map[entities].flatten
 	}
 
 	def static Iterable<EDItem> effectiveEDItems(TechnologyCatalog it) {

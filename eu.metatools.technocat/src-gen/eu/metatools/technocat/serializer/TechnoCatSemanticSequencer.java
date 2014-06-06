@@ -169,7 +169,7 @@ public class TechnoCatSemanticSequencer extends AbstractDelegatingSemanticSequen
 	
 	/**
 	 * Constraint:
-	 *     (name=TCID modelElements+=Element*)
+	 *     (name=TCID (imports+=Import | entityTypes+=ETD | relationTypes+=RTD | entities+=ED | relations+=RD)*)
 	 */
 	protected void sequence_TechnologyCatalog(EObject context, TechnologyCatalog semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

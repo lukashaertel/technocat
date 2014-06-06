@@ -9,7 +9,11 @@
       fileExtensions="tec" ecorePackage="TechnoCat.ecore#/">
     <genClasses ecoreClass="TechnoCat.ecore#//TechnologyCatalog">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute TechnoCat.ecore#//TechnologyCatalog/name"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TechnoCat.ecore#//TechnologyCatalog/modelElements"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TechnoCat.ecore#//TechnologyCatalog/imports"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TechnoCat.ecore#//TechnologyCatalog/entityTypes"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TechnoCat.ecore#//TechnologyCatalog/relationTypes"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TechnoCat.ecore#//TechnologyCatalog/entities"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference TechnoCat.ecore#//TechnologyCatalog/relations"/>
     </genClasses>
     <genClasses ecoreClass="TechnoCat.ecore#//Element"/>
     <genClasses ecoreClass="TechnoCat.ecore#//Import">

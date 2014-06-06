@@ -944,10 +944,10 @@ public class InternalTechnoCatLexer extends Lexer {
         try {
             int _type = RULE_ID;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../eu.metatools.technocat.ui/src-gen/eu/metatools/technocat/ui/contentassist/antlr/internal/InternalTechnoCat.g:2950:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
-            // ../eu.metatools.technocat.ui/src-gen/eu/metatools/technocat/ui/contentassist/antlr/internal/InternalTechnoCat.g:2950:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // ../eu.metatools.technocat.ui/src-gen/eu/metatools/technocat/ui/contentassist/antlr/internal/InternalTechnoCat.g:3003:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
+            // ../eu.metatools.technocat.ui/src-gen/eu/metatools/technocat/ui/contentassist/antlr/internal/InternalTechnoCat.g:3003:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             {
-            // ../eu.metatools.technocat.ui/src-gen/eu/metatools/technocat/ui/contentassist/antlr/internal/InternalTechnoCat.g:2950:11: ( '^' )?
+            // ../eu.metatools.technocat.ui/src-gen/eu/metatools/technocat/ui/contentassist/antlr/internal/InternalTechnoCat.g:3003:11: ( '^' )?
             int alt1=2;
             int LA1_0 = input.LA(1);
 
@@ -956,7 +956,7 @@ public class InternalTechnoCatLexer extends Lexer {
             }
             switch (alt1) {
                 case 1 :
-                    // ../eu.metatools.technocat.ui/src-gen/eu/metatools/technocat/ui/contentassist/antlr/internal/InternalTechnoCat.g:2950:11: '^'
+                    // ../eu.metatools.technocat.ui/src-gen/eu/metatools/technocat/ui/contentassist/antlr/internal/InternalTechnoCat.g:3003:11: '^'
                     {
                     match('^'); 
 
@@ -974,7 +974,7 @@ public class InternalTechnoCatLexer extends Lexer {
                 recover(mse);
                 throw mse;}
 
-            // ../eu.metatools.technocat.ui/src-gen/eu/metatools/technocat/ui/contentassist/antlr/internal/InternalTechnoCat.g:2950:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // ../eu.metatools.technocat.ui/src-gen/eu/metatools/technocat/ui/contentassist/antlr/internal/InternalTechnoCat.g:3003:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             loop2:
             do {
                 int alt2=2;
@@ -1023,11 +1023,11 @@ public class InternalTechnoCatLexer extends Lexer {
         try {
             int _type = RULE_STRING;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../eu.metatools.technocat.ui/src-gen/eu/metatools/technocat/ui/contentassist/antlr/internal/InternalTechnoCat.g:2952:13: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' )
-            // ../eu.metatools.technocat.ui/src-gen/eu/metatools/technocat/ui/contentassist/antlr/internal/InternalTechnoCat.g:2952:15: '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
+            // ../eu.metatools.technocat.ui/src-gen/eu/metatools/technocat/ui/contentassist/antlr/internal/InternalTechnoCat.g:3005:13: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' )
+            // ../eu.metatools.technocat.ui/src-gen/eu/metatools/technocat/ui/contentassist/antlr/internal/InternalTechnoCat.g:3005:15: '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
             {
             match('\"'); 
-            // ../eu.metatools.technocat.ui/src-gen/eu/metatools/technocat/ui/contentassist/antlr/internal/InternalTechnoCat.g:2952:19: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )*
+            // ../eu.metatools.technocat.ui/src-gen/eu/metatools/technocat/ui/contentassist/antlr/internal/InternalTechnoCat.g:3005:19: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )*
             loop3:
             do {
                 int alt3=3;
@@ -1043,7 +1043,7 @@ public class InternalTechnoCatLexer extends Lexer {
 
                 switch (alt3) {
             	case 1 :
-            	    // ../eu.metatools.technocat.ui/src-gen/eu/metatools/technocat/ui/contentassist/antlr/internal/InternalTechnoCat.g:2952:20: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
+            	    // ../eu.metatools.technocat.ui/src-gen/eu/metatools/technocat/ui/contentassist/antlr/internal/InternalTechnoCat.g:3005:20: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
             	    {
             	    match('\\'); 
             	    if ( input.LA(1)=='\"'||input.LA(1)=='\''||input.LA(1)=='\\'||input.LA(1)=='b'||input.LA(1)=='f'||input.LA(1)=='n'||input.LA(1)=='r'||(input.LA(1)>='t' && input.LA(1)<='u') ) {
@@ -1059,7 +1059,7 @@ public class InternalTechnoCatLexer extends Lexer {
             	    }
             	    break;
             	case 2 :
-            	    // ../eu.metatools.technocat.ui/src-gen/eu/metatools/technocat/ui/contentassist/antlr/internal/InternalTechnoCat.g:2952:65: ~ ( ( '\\\\' | '\"' ) )
+            	    // ../eu.metatools.technocat.ui/src-gen/eu/metatools/technocat/ui/contentassist/antlr/internal/InternalTechnoCat.g:3005:65: ~ ( ( '\\\\' | '\"' ) )
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
             	        input.consume();
@@ -1096,12 +1096,12 @@ public class InternalTechnoCatLexer extends Lexer {
         try {
             int _type = RULE_SL_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../eu.metatools.technocat.ui/src-gen/eu/metatools/technocat/ui/contentassist/antlr/internal/InternalTechnoCat.g:2954:17: ( '--' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
-            // ../eu.metatools.technocat.ui/src-gen/eu/metatools/technocat/ui/contentassist/antlr/internal/InternalTechnoCat.g:2954:19: '--' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
+            // ../eu.metatools.technocat.ui/src-gen/eu/metatools/technocat/ui/contentassist/antlr/internal/InternalTechnoCat.g:3007:17: ( '--' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
+            // ../eu.metatools.technocat.ui/src-gen/eu/metatools/technocat/ui/contentassist/antlr/internal/InternalTechnoCat.g:3007:19: '--' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
             {
             match("--"); 
 
-            // ../eu.metatools.technocat.ui/src-gen/eu/metatools/technocat/ui/contentassist/antlr/internal/InternalTechnoCat.g:2954:24: (~ ( ( '\\n' | '\\r' ) ) )*
+            // ../eu.metatools.technocat.ui/src-gen/eu/metatools/technocat/ui/contentassist/antlr/internal/InternalTechnoCat.g:3007:24: (~ ( ( '\\n' | '\\r' ) ) )*
             loop4:
             do {
                 int alt4=2;
@@ -1114,7 +1114,7 @@ public class InternalTechnoCatLexer extends Lexer {
 
                 switch (alt4) {
             	case 1 :
-            	    // ../eu.metatools.technocat.ui/src-gen/eu/metatools/technocat/ui/contentassist/antlr/internal/InternalTechnoCat.g:2954:24: ~ ( ( '\\n' | '\\r' ) )
+            	    // ../eu.metatools.technocat.ui/src-gen/eu/metatools/technocat/ui/contentassist/antlr/internal/InternalTechnoCat.g:3007:24: ~ ( ( '\\n' | '\\r' ) )
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='\uFFFF') ) {
             	        input.consume();
@@ -1134,7 +1134,7 @@ public class InternalTechnoCatLexer extends Lexer {
                 }
             } while (true);
 
-            // ../eu.metatools.technocat.ui/src-gen/eu/metatools/technocat/ui/contentassist/antlr/internal/InternalTechnoCat.g:2954:40: ( ( '\\r' )? '\\n' )?
+            // ../eu.metatools.technocat.ui/src-gen/eu/metatools/technocat/ui/contentassist/antlr/internal/InternalTechnoCat.g:3007:40: ( ( '\\r' )? '\\n' )?
             int alt6=2;
             int LA6_0 = input.LA(1);
 
@@ -1143,9 +1143,9 @@ public class InternalTechnoCatLexer extends Lexer {
             }
             switch (alt6) {
                 case 1 :
-                    // ../eu.metatools.technocat.ui/src-gen/eu/metatools/technocat/ui/contentassist/antlr/internal/InternalTechnoCat.g:2954:41: ( '\\r' )? '\\n'
+                    // ../eu.metatools.technocat.ui/src-gen/eu/metatools/technocat/ui/contentassist/antlr/internal/InternalTechnoCat.g:3007:41: ( '\\r' )? '\\n'
                     {
-                    // ../eu.metatools.technocat.ui/src-gen/eu/metatools/technocat/ui/contentassist/antlr/internal/InternalTechnoCat.g:2954:41: ( '\\r' )?
+                    // ../eu.metatools.technocat.ui/src-gen/eu/metatools/technocat/ui/contentassist/antlr/internal/InternalTechnoCat.g:3007:41: ( '\\r' )?
                     int alt5=2;
                     int LA5_0 = input.LA(1);
 
@@ -1154,7 +1154,7 @@ public class InternalTechnoCatLexer extends Lexer {
                     }
                     switch (alt5) {
                         case 1 :
-                            // ../eu.metatools.technocat.ui/src-gen/eu/metatools/technocat/ui/contentassist/antlr/internal/InternalTechnoCat.g:2954:41: '\\r'
+                            // ../eu.metatools.technocat.ui/src-gen/eu/metatools/technocat/ui/contentassist/antlr/internal/InternalTechnoCat.g:3007:41: '\\r'
                             {
                             match('\r'); 
 
@@ -1186,10 +1186,10 @@ public class InternalTechnoCatLexer extends Lexer {
         try {
             int _type = RULE_WS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../eu.metatools.technocat.ui/src-gen/eu/metatools/technocat/ui/contentassist/antlr/internal/InternalTechnoCat.g:2956:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
-            // ../eu.metatools.technocat.ui/src-gen/eu/metatools/technocat/ui/contentassist/antlr/internal/InternalTechnoCat.g:2956:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // ../eu.metatools.technocat.ui/src-gen/eu/metatools/technocat/ui/contentassist/antlr/internal/InternalTechnoCat.g:3009:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
+            // ../eu.metatools.technocat.ui/src-gen/eu/metatools/technocat/ui/contentassist/antlr/internal/InternalTechnoCat.g:3009:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             {
-            // ../eu.metatools.technocat.ui/src-gen/eu/metatools/technocat/ui/contentassist/antlr/internal/InternalTechnoCat.g:2956:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // ../eu.metatools.technocat.ui/src-gen/eu/metatools/technocat/ui/contentassist/antlr/internal/InternalTechnoCat.g:3009:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             int cnt7=0;
             loop7:
             do {

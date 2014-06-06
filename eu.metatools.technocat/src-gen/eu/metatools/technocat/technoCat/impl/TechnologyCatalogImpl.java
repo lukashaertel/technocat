@@ -2,7 +2,11 @@
  */
 package eu.metatools.technocat.technoCat.impl;
 
-import eu.metatools.technocat.technoCat.Element;
+import eu.metatools.technocat.technoCat.ED;
+import eu.metatools.technocat.technoCat.ETD;
+import eu.metatools.technocat.technoCat.Import;
+import eu.metatools.technocat.technoCat.RD;
+import eu.metatools.technocat.technoCat.RTD;
 import eu.metatools.technocat.technoCat.TechnoCatPackage;
 import eu.metatools.technocat.technoCat.TechnologyCatalog;
 
@@ -30,7 +34,11 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * <ul>
  *   <li>{@link eu.metatools.technocat.technoCat.impl.TechnologyCatalogImpl#getName <em>Name</em>}</li>
- *   <li>{@link eu.metatools.technocat.technoCat.impl.TechnologyCatalogImpl#getModelElements <em>Model Elements</em>}</li>
+ *   <li>{@link eu.metatools.technocat.technoCat.impl.TechnologyCatalogImpl#getImports <em>Imports</em>}</li>
+ *   <li>{@link eu.metatools.technocat.technoCat.impl.TechnologyCatalogImpl#getEntityTypes <em>Entity Types</em>}</li>
+ *   <li>{@link eu.metatools.technocat.technoCat.impl.TechnologyCatalogImpl#getRelationTypes <em>Relation Types</em>}</li>
+ *   <li>{@link eu.metatools.technocat.technoCat.impl.TechnologyCatalogImpl#getEntities <em>Entities</em>}</li>
+ *   <li>{@link eu.metatools.technocat.technoCat.impl.TechnologyCatalogImpl#getRelations <em>Relations</em>}</li>
  * </ul>
  * </p>
  *
@@ -59,14 +67,54 @@ public class TechnologyCatalogImpl extends MinimalEObjectImpl.Container implemen
   protected String name = NAME_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getModelElements() <em>Model Elements</em>}' containment reference list.
+   * The cached value of the '{@link #getImports() <em>Imports</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getModelElements()
+   * @see #getImports()
    * @generated
    * @ordered
    */
-  protected EList<Element> modelElements;
+  protected EList<Import> imports;
+
+  /**
+   * The cached value of the '{@link #getEntityTypes() <em>Entity Types</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getEntityTypes()
+   * @generated
+   * @ordered
+   */
+  protected EList<ETD> entityTypes;
+
+  /**
+   * The cached value of the '{@link #getRelationTypes() <em>Relation Types</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getRelationTypes()
+   * @generated
+   * @ordered
+   */
+  protected EList<RTD> relationTypes;
+
+  /**
+   * The cached value of the '{@link #getEntities() <em>Entities</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getEntities()
+   * @generated
+   * @ordered
+   */
+  protected EList<ED> entities;
+
+  /**
+   * The cached value of the '{@link #getRelations() <em>Relations</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getRelations()
+   * @generated
+   * @ordered
+   */
+  protected EList<RD> relations;
 
   /**
    * <!-- begin-user-doc -->
@@ -117,13 +165,69 @@ public class TechnologyCatalogImpl extends MinimalEObjectImpl.Container implemen
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<Element> getModelElements()
+  public EList<Import> getImports()
   {
-    if (modelElements == null)
+    if (imports == null)
     {
-      modelElements = new EObjectContainmentEList<Element>(Element.class, this, TechnoCatPackage.TECHNOLOGY_CATALOG__MODEL_ELEMENTS);
+      imports = new EObjectContainmentEList<Import>(Import.class, this, TechnoCatPackage.TECHNOLOGY_CATALOG__IMPORTS);
     }
-    return modelElements;
+    return imports;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EList<ETD> getEntityTypes()
+  {
+    if (entityTypes == null)
+    {
+      entityTypes = new EObjectContainmentEList<ETD>(ETD.class, this, TechnoCatPackage.TECHNOLOGY_CATALOG__ENTITY_TYPES);
+    }
+    return entityTypes;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EList<RTD> getRelationTypes()
+  {
+    if (relationTypes == null)
+    {
+      relationTypes = new EObjectContainmentEList<RTD>(RTD.class, this, TechnoCatPackage.TECHNOLOGY_CATALOG__RELATION_TYPES);
+    }
+    return relationTypes;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EList<ED> getEntities()
+  {
+    if (entities == null)
+    {
+      entities = new EObjectContainmentEList<ED>(ED.class, this, TechnoCatPackage.TECHNOLOGY_CATALOG__ENTITIES);
+    }
+    return entities;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EList<RD> getRelations()
+  {
+    if (relations == null)
+    {
+      relations = new EObjectContainmentEList<RD>(RD.class, this, TechnoCatPackage.TECHNOLOGY_CATALOG__RELATIONS);
+    }
+    return relations;
   }
 
   /**
@@ -136,8 +240,16 @@ public class TechnologyCatalogImpl extends MinimalEObjectImpl.Container implemen
   {
     switch (featureID)
     {
-      case TechnoCatPackage.TECHNOLOGY_CATALOG__MODEL_ELEMENTS:
-        return ((InternalEList<?>)getModelElements()).basicRemove(otherEnd, msgs);
+      case TechnoCatPackage.TECHNOLOGY_CATALOG__IMPORTS:
+        return ((InternalEList<?>)getImports()).basicRemove(otherEnd, msgs);
+      case TechnoCatPackage.TECHNOLOGY_CATALOG__ENTITY_TYPES:
+        return ((InternalEList<?>)getEntityTypes()).basicRemove(otherEnd, msgs);
+      case TechnoCatPackage.TECHNOLOGY_CATALOG__RELATION_TYPES:
+        return ((InternalEList<?>)getRelationTypes()).basicRemove(otherEnd, msgs);
+      case TechnoCatPackage.TECHNOLOGY_CATALOG__ENTITIES:
+        return ((InternalEList<?>)getEntities()).basicRemove(otherEnd, msgs);
+      case TechnoCatPackage.TECHNOLOGY_CATALOG__RELATIONS:
+        return ((InternalEList<?>)getRelations()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -154,8 +266,16 @@ public class TechnologyCatalogImpl extends MinimalEObjectImpl.Container implemen
     {
       case TechnoCatPackage.TECHNOLOGY_CATALOG__NAME:
         return getName();
-      case TechnoCatPackage.TECHNOLOGY_CATALOG__MODEL_ELEMENTS:
-        return getModelElements();
+      case TechnoCatPackage.TECHNOLOGY_CATALOG__IMPORTS:
+        return getImports();
+      case TechnoCatPackage.TECHNOLOGY_CATALOG__ENTITY_TYPES:
+        return getEntityTypes();
+      case TechnoCatPackage.TECHNOLOGY_CATALOG__RELATION_TYPES:
+        return getRelationTypes();
+      case TechnoCatPackage.TECHNOLOGY_CATALOG__ENTITIES:
+        return getEntities();
+      case TechnoCatPackage.TECHNOLOGY_CATALOG__RELATIONS:
+        return getRelations();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -174,9 +294,25 @@ public class TechnologyCatalogImpl extends MinimalEObjectImpl.Container implemen
       case TechnoCatPackage.TECHNOLOGY_CATALOG__NAME:
         setName((String)newValue);
         return;
-      case TechnoCatPackage.TECHNOLOGY_CATALOG__MODEL_ELEMENTS:
-        getModelElements().clear();
-        getModelElements().addAll((Collection<? extends Element>)newValue);
+      case TechnoCatPackage.TECHNOLOGY_CATALOG__IMPORTS:
+        getImports().clear();
+        getImports().addAll((Collection<? extends Import>)newValue);
+        return;
+      case TechnoCatPackage.TECHNOLOGY_CATALOG__ENTITY_TYPES:
+        getEntityTypes().clear();
+        getEntityTypes().addAll((Collection<? extends ETD>)newValue);
+        return;
+      case TechnoCatPackage.TECHNOLOGY_CATALOG__RELATION_TYPES:
+        getRelationTypes().clear();
+        getRelationTypes().addAll((Collection<? extends RTD>)newValue);
+        return;
+      case TechnoCatPackage.TECHNOLOGY_CATALOG__ENTITIES:
+        getEntities().clear();
+        getEntities().addAll((Collection<? extends ED>)newValue);
+        return;
+      case TechnoCatPackage.TECHNOLOGY_CATALOG__RELATIONS:
+        getRelations().clear();
+        getRelations().addAll((Collection<? extends RD>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -195,8 +331,20 @@ public class TechnologyCatalogImpl extends MinimalEObjectImpl.Container implemen
       case TechnoCatPackage.TECHNOLOGY_CATALOG__NAME:
         setName(NAME_EDEFAULT);
         return;
-      case TechnoCatPackage.TECHNOLOGY_CATALOG__MODEL_ELEMENTS:
-        getModelElements().clear();
+      case TechnoCatPackage.TECHNOLOGY_CATALOG__IMPORTS:
+        getImports().clear();
+        return;
+      case TechnoCatPackage.TECHNOLOGY_CATALOG__ENTITY_TYPES:
+        getEntityTypes().clear();
+        return;
+      case TechnoCatPackage.TECHNOLOGY_CATALOG__RELATION_TYPES:
+        getRelationTypes().clear();
+        return;
+      case TechnoCatPackage.TECHNOLOGY_CATALOG__ENTITIES:
+        getEntities().clear();
+        return;
+      case TechnoCatPackage.TECHNOLOGY_CATALOG__RELATIONS:
+        getRelations().clear();
         return;
     }
     super.eUnset(featureID);
@@ -214,8 +362,16 @@ public class TechnologyCatalogImpl extends MinimalEObjectImpl.Container implemen
     {
       case TechnoCatPackage.TECHNOLOGY_CATALOG__NAME:
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-      case TechnoCatPackage.TECHNOLOGY_CATALOG__MODEL_ELEMENTS:
-        return modelElements != null && !modelElements.isEmpty();
+      case TechnoCatPackage.TECHNOLOGY_CATALOG__IMPORTS:
+        return imports != null && !imports.isEmpty();
+      case TechnoCatPackage.TECHNOLOGY_CATALOG__ENTITY_TYPES:
+        return entityTypes != null && !entityTypes.isEmpty();
+      case TechnoCatPackage.TECHNOLOGY_CATALOG__RELATION_TYPES:
+        return relationTypes != null && !relationTypes.isEmpty();
+      case TechnoCatPackage.TECHNOLOGY_CATALOG__ENTITIES:
+        return entities != null && !entities.isEmpty();
+      case TechnoCatPackage.TECHNOLOGY_CATALOG__RELATIONS:
+        return relations != null && !relations.isEmpty();
     }
     return super.eIsSet(featureID);
   }

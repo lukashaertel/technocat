@@ -23,14 +23,23 @@ public class TechnoCatGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cModelKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cNameTCIDParserRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
-		private final Assignment cModelElementsAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cModelElementsElementParserRuleCall_2_0 = (RuleCall)cModelElementsAssignment_2.eContents().get(0);
+		private final Alternatives cAlternatives_2 = (Alternatives)cGroup.eContents().get(2);
+		private final Assignment cImportsAssignment_2_0 = (Assignment)cAlternatives_2.eContents().get(0);
+		private final RuleCall cImportsImportParserRuleCall_2_0_0 = (RuleCall)cImportsAssignment_2_0.eContents().get(0);
+		private final Assignment cEntityTypesAssignment_2_1 = (Assignment)cAlternatives_2.eContents().get(1);
+		private final RuleCall cEntityTypesETDParserRuleCall_2_1_0 = (RuleCall)cEntityTypesAssignment_2_1.eContents().get(0);
+		private final Assignment cRelationTypesAssignment_2_2 = (Assignment)cAlternatives_2.eContents().get(2);
+		private final RuleCall cRelationTypesRTDParserRuleCall_2_2_0 = (RuleCall)cRelationTypesAssignment_2_2.eContents().get(0);
+		private final Assignment cEntitiesAssignment_2_3 = (Assignment)cAlternatives_2.eContents().get(3);
+		private final RuleCall cEntitiesEDParserRuleCall_2_3_0 = (RuleCall)cEntitiesAssignment_2_3.eContents().get(0);
+		private final Assignment cRelationsAssignment_2_4 = (Assignment)cAlternatives_2.eContents().get(4);
+		private final RuleCall cRelationsRDParserRuleCall_2_4_0 = (RuleCall)cRelationsAssignment_2_4.eContents().get(0);
 		
 		//TechnologyCatalog:
-		//	"model" name=TCID modelElements+=Element*;
+		//	"model" name=TCID (imports+=Import | entityTypes+=ETD | relationTypes+=RTD | entities+=ED | relations+=RD)*;
 		public ParserRule getRule() { return rule; }
 
-		//"model" name=TCID modelElements+=Element*
+		//"model" name=TCID (imports+=Import | entityTypes+=ETD | relationTypes+=RTD | entities+=ED | relations+=RD)*
 		public Group getGroup() { return cGroup; }
 
 		//"model"
@@ -42,11 +51,38 @@ public class TechnoCatGrammarAccess extends AbstractGrammarElementFinder {
 		//TCID
 		public RuleCall getNameTCIDParserRuleCall_1_0() { return cNameTCIDParserRuleCall_1_0; }
 
-		//modelElements+=Element*
-		public Assignment getModelElementsAssignment_2() { return cModelElementsAssignment_2; }
+		//(imports+=Import | entityTypes+=ETD | relationTypes+=RTD | entities+=ED | relations+=RD)*
+		public Alternatives getAlternatives_2() { return cAlternatives_2; }
 
-		//Element
-		public RuleCall getModelElementsElementParserRuleCall_2_0() { return cModelElementsElementParserRuleCall_2_0; }
+		//imports+=Import
+		public Assignment getImportsAssignment_2_0() { return cImportsAssignment_2_0; }
+
+		//Import
+		public RuleCall getImportsImportParserRuleCall_2_0_0() { return cImportsImportParserRuleCall_2_0_0; }
+
+		//entityTypes+=ETD
+		public Assignment getEntityTypesAssignment_2_1() { return cEntityTypesAssignment_2_1; }
+
+		//ETD
+		public RuleCall getEntityTypesETDParserRuleCall_2_1_0() { return cEntityTypesETDParserRuleCall_2_1_0; }
+
+		//relationTypes+=RTD
+		public Assignment getRelationTypesAssignment_2_2() { return cRelationTypesAssignment_2_2; }
+
+		//RTD
+		public RuleCall getRelationTypesRTDParserRuleCall_2_2_0() { return cRelationTypesRTDParserRuleCall_2_2_0; }
+
+		//entities+=ED
+		public Assignment getEntitiesAssignment_2_3() { return cEntitiesAssignment_2_3; }
+
+		//ED
+		public RuleCall getEntitiesEDParserRuleCall_2_3_0() { return cEntitiesEDParserRuleCall_2_3_0; }
+
+		//relations+=RD
+		public Assignment getRelationsAssignment_2_4() { return cRelationsAssignment_2_4; }
+
+		//RD
+		public RuleCall getRelationsRDParserRuleCall_2_4_0() { return cRelationsRDParserRuleCall_2_4_0; }
 	}
 
 	public class ElementElements extends AbstractParserRuleElementFinder {
@@ -818,7 +854,7 @@ public class TechnoCatGrammarAccess extends AbstractGrammarElementFinder {
 
 	
 	//TechnologyCatalog:
-	//	"model" name=TCID modelElements+=Element*;
+	//	"model" name=TCID (imports+=Import | entityTypes+=ETD | relationTypes+=RTD | entities+=ED | relations+=RD)*;
 	public TechnologyCatalogElements getTechnologyCatalogAccess() {
 		return (pTechnologyCatalog != null) ? pTechnologyCatalog : (pTechnologyCatalog = new TechnologyCatalogElements());
 	}
