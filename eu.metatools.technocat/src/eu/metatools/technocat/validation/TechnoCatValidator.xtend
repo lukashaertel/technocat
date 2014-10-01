@@ -3,23 +3,21 @@
  */
 package eu.metatools.technocat.validation
 
+import eu.metatools.technocat.technoCat.EDItem
+import eu.metatools.technocat.technoCat.ETD
 import eu.metatools.technocat.technoCat.RD
+import eu.metatools.technocat.technoCat.RTD
 import eu.metatools.technocat.technoCat.TechnoCatPackage
+import eu.metatools.technocat.technoCat.TechnologyCatalog
 import org.eclipse.xtext.validation.Check
 
+import static extension eu.metatools.technocat.reasoning.TechnoCatMetrics.*
 import static extension eu.metatools.technocat.reasoning.TechnoCatExpansions.*
 import static extension eu.metatools.technocat.reasoning.TechnoCatExtensions.*
 import static extension eu.metatools.technocat.reasoning.TechnoCatRelations.*
 import static extension eu.metatools.technocat.reasoning.TechnoCatScopes.*
 import static extension eu.metatools.technocat.util.TechnoCatStrings.*
-import static extension eu.metatools.technocat.util.TechnoCatEcore.*
-import eu.metatools.technocat.technoCat.ModelElement
-import eu.metatools.technocat.technoCat.DefinitionElement
-import eu.metatools.technocat.technoCat.ETD
 import eu.metatools.technocat.technoCat.ED
-import javax.naming.Name
-import eu.metatools.technocat.technoCat.RTD
-import eu.metatools.technocat.technoCat.EDItem
 
 /**
  * Custom validation rules. 
@@ -31,7 +29,58 @@ class TechnoCatValidator extends AbstractTechnoCatValidator {
 	public static val NAME_ALREADY_USED = "nameAlreadyUsed"
 
 	@Check
-	def checkValidRelation(RD it) {
+	def metricate(TechnologyCatalog t) {
+		info('''Rels : «t.relations.filter[applicableOverloads.empty].size»/«t.relations.size»''', null)
+		info('''SOV: «t.SOV»''', null)
+		info('''ENR: «t.ENR»''', null)
+		info('''TIP: «t.TIP»''', null)
+		info('''EOG: «t.EOG»''', null)
+
+		val nocs = t.entityTypes.map[e|t.NOC(e)]
+		val dits = t.entityTypes.map[e|t.NOC(e)]
+
+		val cids = t.entities.map[e|t.CID(e)]
+		val cods = t.entities.map[e|t.COD(e)]
+
+		val nocsMin = nocs.reduce[a, b|Math.min(a, b)]
+		val nocsAvg = nocs.map[x|x as double].reduce[a, b|a / 2.0 + b / 2.0]
+		val nocsMax = nocs.reduce[a, b|Math.max(a, b)]
+
+		info('''NOC min: «nocsMin», avg: «nocsAvg», max: «nocsMax»''', null)
+
+		val ditsMin = dits.reduce[a, b|Math.min(a, b)]
+		val ditsAvg = dits.map[x|x as double].reduce[a, b|a / 2.0 + b / 2.0]
+		val ditsMax = dits.reduce[a, b|Math.max(a, b)]
+
+		info('''DIT min: «ditsMin», avg: «ditsAvg», max: «ditsMax»''', null)
+
+		val cidsMin = cids.reduce[a, b|Math.min(a, b)]
+		val cidsAvg = cids.map[x|x as double].reduce[a, b|a / 2.0 + b / 2.0]
+		val cidsMax = cids.reduce[a, b|Math.max(a, b)]
+
+		info('''CID min: «cidsMin», avg: «cidsAvg», max: «cidsMax»''', null)
+
+		val codsMin = cods.reduce[a, b|Math.min(a, b)]
+		val codsAvg = cods.map[x|x as double].reduce[a, b|a / 2.0 + b / 2.0]
+		val codsMax = cods.reduce[a, b|Math.max(a, b)]
+
+		info('''COD min: «codsMin», avg: «codsAvg», max: «codsMax»''', null)
+	}
+
+	@Check
+	def metricate(ETD e) {
+		info('''NOC: «e.technologyCatalog.NOC(e)»''', null)
+		info('''DIT: «e.technologyCatalog.DIT(e)»''', null)
+	}
+
+	@Check
+	def metricate(ED e) {
+		info('''CID: «e.technologyCatalog.CID(e)»''', null)
+		info('''COD: «e.technologyCatalog.COD(e)»''', null)
+	}
+
+	@Check
+	def check(RD it) {
 		guard(left != null)
 		guard(left.type != null)
 
@@ -54,27 +103,41 @@ class TechnoCatValidator extends AbstractTechnoCatValidator {
 			error(
 				'''No applicable relation for «hleft.representation» «hrelation.representation» «hright.representation»''',
 				TechnoCatPackage.Literals.RD__RELATION, NO_APPLICABLE_RELATION)
+
+			return false
 		}
+
+		return true
 	}
 
 	@Check
-	def checkUniqueEntityTypes(ETD x) {
+	def check(ETD x) {
 		if (x.technologyCatalog.effectiveETDs.exists[y|x != y && x.name == y.name]) {
 			error('''Multiple defintions''', TechnoCatPackage.Literals.DEFINITION_ELEMENT__NAME, NAME_ALREADY_USED)
+
+			return false
 		}
+
+		return true
 	}
 
 	@Check
-	def checkUniqueRelationTypes(RTD x) {
+	def check(RTD x) {
 		if (x.technologyCatalog.effectiveRTDs.exists[y|x != y && x.name == y.name]) {
 			error('''Multiple defintions''', TechnoCatPackage.Literals.DEFINITION_ELEMENT__NAME, NAME_ALREADY_USED)
+
+			return false
 		}
+
+		return true
 	}
 
 	@Check
-	def checkUniqueRelationTypes(EDItem x) {
+	def check(EDItem x) {
 		if (x.technologyCatalog.effectiveEDs.map[items].flatten.exists[y|x != y && x.name == y.name]) {
 			error('''Multiple defintions''', TechnoCatPackage.Literals.ED_ITEM__NAME, NAME_ALREADY_USED)
+			return false
 		}
+		return true
 	}
 }

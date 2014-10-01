@@ -5,7 +5,7 @@ import org.eclipse.xtext.xbase.lib.IterableExtensions;
 
 @SuppressWarnings("all")
 public class TechnoCatStrings {
-  public static CharSequence representation(final Iterable<? extends Object> c) {
+  public static CharSequence representation(final Iterable<?> c) {
     StringConcatenation _builder = new StringConcatenation();
     {
       int _size = IterableExtensions.size(c);

@@ -250,7 +250,9 @@
    <extension
          point="org.eclipse.xtext.builder.participant">
       <participant
-            class="eu.metatools.technocat.ui.TechnoCatExecutableExtensionFactory:org.eclipse.xtext.builder.IXtextBuilderParticipant">
+            class="eu.metatools.technocat.ui.TechnoCatExecutableExtensionFactory:org.eclipse.xtext.builder.IXtextBuilderParticipant"
+            fileExtensions="tec"
+            >
       </participant>
    </extension>
    <extension

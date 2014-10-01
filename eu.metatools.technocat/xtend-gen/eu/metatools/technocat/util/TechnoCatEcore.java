@@ -22,7 +22,7 @@ public class TechnoCatEcore {
       EClass _eClass_1 = it.eClass();
       EStructuralFeature _eContainingFeature = _eClass_1.eContainingFeature();
       Object _eGet = _eContainer_1.eGet(_eContainingFeature);
-      final List<? extends Object> l = ((List<?>) _eGet);
+      final List<?> l = ((List<?>) _eGet);
       return l.indexOf(it);
     } else {
       return 0;

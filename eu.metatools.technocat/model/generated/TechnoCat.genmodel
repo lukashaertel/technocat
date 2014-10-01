@@ -4,7 +4,7 @@
     editorDirectory="/eu.metatools.technocat.editor/src" modelPluginID="eu.metatools.technocat"
     forceOverwrite="true" modelName="TechnoCat" updateClasspath="false" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
     complianceLevel="5.0" copyrightFields="false" editPluginID="eu.metatools.technocat.edit"
-    editorPluginID="eu.metatools.technocat.editor" runtimeVersion="2.9">
+    editorPluginID="eu.metatools.technocat.editor" runtimeVersion="2.10">
   <genPackages prefix="TechnoCat" basePackage="eu.metatools.technocat" disposableProviderFactory="true"
       fileExtensions="tec" ecorePackage="TechnoCat.ecore#/">
     <genClasses ecoreClass="TechnoCat.ecore#//TechnologyCatalog">
